@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo1 from './logo.svg';
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   render() {
@@ -17,5 +18,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;

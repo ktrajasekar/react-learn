@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import App from './App';
+// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
 
-const Button1  = function(){
-    return(
-    <button className="btn">Test</button>
-      );
-    };
+class Bt extends Component {
+state ={ counters :10 };
 
-    let models = (<div className="container"> 
-    <Button1 />
-    <App />
-    </div>
-    );
+handleClick = () =>{
+    this.setState({
+        counters:this.state.counters+1;
+    })
+};
+
+    render(){
+        return(
+            <button onClick={this.handleClick}>
+                {this.state.counters}
+            </button>   
+        );
+    }
+  }
+
+
+let models = (<div className="container"> 
+{/* <App /> */}
+<Bt />
+ </div>
+);
+
+
+
 
 ReactDOM.render(models, document.getElementById('root'));
 registerServiceWorker();
